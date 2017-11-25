@@ -286,13 +286,13 @@ public class MenuScript : MonoBehaviour
                 {
                     btnsNiveles[i].GetComponentInChildren<Button>().enabled = false;
                     var obj_ = btnsNiveles[i].GetComponentInChildren<Button>().gameObject;
-                    obj_.transform.FindChild("btnFondo").GetComponent<Image>().sprite = SpritelockedLevel;
+                    obj_.transform.Find("btnFondo").GetComponent<Image>().sprite = SpritelockedLevel;
                 }
                 else
                 {
                     btnsNiveles[i].GetComponentInChildren<Button>().GetComponentInChildren<Image>().sprite = SpriteUnlockedLevel;
                     var obj_ = btnsNiveles[i].GetComponentInChildren<Button>().gameObject;
-                    obj_.transform.FindChild("btnFondo").GetComponent<Image>().sprite = SpriteUnlockedLevel;
+                    obj_.transform.Find("btnFondo").GetComponent<Image>().sprite = SpriteUnlockedLevel;
                 }
             }
         }

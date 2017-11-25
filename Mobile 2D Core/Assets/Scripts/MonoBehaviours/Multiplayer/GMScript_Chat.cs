@@ -19,11 +19,11 @@ public class GMScript_Chat : MonoBehaviour
 
     public void ContinuarConElReto() //de Player a Retador
     {
-        GameObject.Find("Scripts").GetComponent<ChatGui>().inputLine = PlayerPrefs.GetString(NamePickGui.UserNamePlayerPref) + " [[reta]] a " + GMScript_Chat.Oponente;
-        GameObject.Find("Scripts").GetComponent<ChatGui>().GuiSendsMsg();
-        MultiplayerManagerScript.NombreCuarto = PlayerPrefs.GetString(NamePickGui.UserNamePlayerPref) + "vs" + GMScript_Chat.Oponente;        
-        PanelRetar.SetActive(false);
-        StartCoroutine("CargarEscena");
+        //GameObject.Find("Scripts").GetComponent<ChatGui>().inputLine = PlayerPrefs.GetString(NamePickGui.UserNamePlayerPref) + " [[reta]] a " + GMScript_Chat.Oponente;
+        //GameObject.Find("Scripts").GetComponent<ChatGui>().GuiSendsMsg();
+        //MultiplayerManagerScript.NombreCuarto = PlayerPrefs.GetString(NamePickGui.UserNamePlayerPref) + "vs" + GMScript_Chat.Oponente;        
+        //PanelRetar.SetActive(false);
+        //StartCoroutine("CargarEscena");
     }
     IEnumerator CargarEscena()
     {

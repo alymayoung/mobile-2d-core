@@ -47,7 +47,7 @@ public class GeneradordeHormigasScript : MonoBehaviour
                 hormiga.GetComponent<AntObject>().Pausado = false;
                 if (hormiga.name == "Hormiga Canon(Clone)")
                 {
-                    GameObject.Find("Cannon").GetComponent<CannonObjectScript>().CargarCannon(hormiga);
+                    GameObject.Find("Cannon").GetComponent<ShooterObjectScript>().CargarCannon(hormiga);
                 }
                 else
                 {

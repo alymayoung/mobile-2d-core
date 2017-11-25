@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CannonScript : MonoBehaviour
+public class ShooterScript : MonoBehaviour
 {
 
     public float step = 0.01f;

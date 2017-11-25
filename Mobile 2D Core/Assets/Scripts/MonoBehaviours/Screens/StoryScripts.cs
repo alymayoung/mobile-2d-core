@@ -12,11 +12,11 @@ public class Historia_Script : MonoBehaviour
     private int nivel_a_gargar;
     private void Awake()
     {
-        BotonHistoriaScript informacionDeHistoria = new BotonHistoriaScript();
-        JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString("JsonNivel"), informacionDeHistoria);
-        nivel_a_gargar = informacionDeHistoria.Nivel;
-        ArraySprite = new Sprite[informacionDeHistoria.Historieta.Length];
-        if (ArraySprite.Length == 0)
+//        BotonHistoriaScript informacionDeHistoria = new BotonHistoriaScript();
+//        JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString("JsonNivel"), informacionDeHistoria);
+//        nivel_a_gargar = informacionDeHistoria.Nivel;
+//        ArraySprite = new Sprite[informacionDeHistoria.Historieta.Length];
+/*        if (ArraySprite.Length == 0)
         {
             if (informacionDeHistoria.CargarPaginaSkill == false)
             {
@@ -32,10 +32,10 @@ public class Historia_Script : MonoBehaviour
         {
             for (int i = 0; i < ArraySprite.Length; i++)
             {
-                Debug.Log(informacionDeHistoria.Historieta[i]);
-                ArraySprite[i] = (Resources.Load("Sprites/" + informacionDeHistoria.Historieta[i], typeof(Sprite)) as Sprite);
+//                Debug.Log(informacionDeHistoria.Historieta[i]);
+//                ArraySprite[i] = (Resources.Load("Sprites/" + informacionDeHistoria.Historieta[i], typeof(Sprite)) as Sprite);
             }
-        }
+        }*/
     }
 
     private void Start() 

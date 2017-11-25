@@ -70,7 +70,7 @@ public class TouchScript : MonoBehaviour
                     if (HitConsecutivos > 1)
                     {
                         var objcombotexto_ = Instantiate(ObjComboTexto, hit.collider.gameObject.transform.position, Quaternion.identity) as GameObject;
-                        objcombotexto_.GetComponent<ScriptComboTexto>().ComboTexto.text = "Combo " + HitConsecutivos.ToString();
+//                        objcombotexto_.GetComponent<ScriptComboTexto>().ComboTexto.text = "Combo " + HitConsecutivos.ToString();
                     }
 
                     AntObject ant = hit.collider.gameObject.GetComponent<AntObject>();
@@ -134,7 +134,7 @@ public class TouchScript : MonoBehaviour
     void CalcularPuntosxHormiga(string _nombreHormiga)
     {
         int Coins_ = PlayerPrefs.GetInt("CoinsMultiplayer");
-        switch (_nombreHormiga)
+        /*switch (_nombreHormiga)
         {
             case "Hormiga Soldado(Clone)":
                 #region
@@ -193,6 +193,6 @@ public class TouchScript : MonoBehaviour
         }
         PlayerPrefs.SetInt("CoinsMultiplayer", Coins_);
         txtCoins.text = Coins_.ToString();
-        PlayerPrefs.Save();
+        PlayerPrefs.Save();*/
     }
 }
