@@ -13,28 +13,17 @@ public class SceneController : MonoBehaviour
 {
     public event Action BeforeSceneUnload;          // Event delegate that is called just before a scene is unloaded.
     public event Action AfterSceneLoad;             // Event delegate that is called just after a scene is loaded.
-
-
     public CanvasGroup faderCanvasGroup;            // The CanvasGroup that controls the Image used for fading to black.
     public float fadeDuration = 1f;                 // How long it should take to fade to and from black.
     public string startingSceneName = "Home";
-                                                    // The name of the scene that should be loaded first.
-    //public string initialStartingPositionName = "DoorToMarket";
-                                                    // The name of the StartingPosition in the first scene to be loaded.
-    //public SaveData playerSaveData;                 // Reference to the ScriptableObject which stores the name of the StartingPosition in the next scene.
-    
-    
     private bool isFading;                          // Flag used to determine if the Image is currently fading to or from black.
-
+    public static object Instance { get; internal set; }
 
     private IEnumerator Start ()
     {
         // Set the initial alpha to start off with a black screen.
         faderCanvasGroup.alpha = 1f;
-
-        // Write the initial starting position to the playerSaveData so it can be loaded by the player when the first scene is loaded.
-        //playerSaveData.Save (PlayerMovement.startingPositionKey, initialStartingPositionName);
-        
+       
         // Start the first scene loading and wait for it to finish.
         yield return StartCoroutine (LoadSceneAndSetActive (startingSceneName));
 
@@ -66,7 +55,9 @@ public class SceneController : MonoBehaviour
             BeforeSceneUnload ();
 
         // Unload the current active scene.
-        SceneManager.UnloadScene (SceneManager.GetActiveScene ().buildIndex);
+        Scene scene = SceneManager.GetActiveScene();         
+        int currentSceneIndex = scene.buildIndex;
+        SceneManager.UnloadSceneAsync (currentSceneIndex);
 
         // Start loading the given scene and wait for it to finish.
         yield return StartCoroutine (LoadSceneAndSetActive (sceneName));
@@ -78,7 +69,6 @@ public class SceneController : MonoBehaviour
         // Start fading back in and wait for it to finish before exiting the function.
         yield return StartCoroutine (Fade (0f));
     }
-
 
     private IEnumerator LoadSceneAndSetActive (string sceneName)
     {

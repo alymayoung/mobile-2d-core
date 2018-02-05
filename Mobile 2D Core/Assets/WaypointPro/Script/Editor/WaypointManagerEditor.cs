@@ -240,7 +240,7 @@ public class WaypointManagerEditor : Editor
     void UpdateMouseInput()
     {
         Event e = Event.current;
-        if (e.type == EventType.mouseDown)
+        if (e.type == EventType.MouseDown)
         {
             if (e.button == 0)
                 OnMouseClick(e.mousePosition);
